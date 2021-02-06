@@ -1,31 +1,32 @@
 <?php
-
+//Get the URL path.
 $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+
+//Page router based on URL path.
 switch ($uri) {
-    case "/index.php/":
-	require "View/home.php";
 
-        break;
+  //Route to the main page
+  case "/":
+    require "View/home.php";
+    break;
 
-    case "/index.php/register":
+  //Route to the main page
+  case "/index.php/":
+    require "View/home.php";
+    break;
 
+  //Route to the register page
+  case "/index.php/register":
+    require "View/register.php";
+    break;
 
-	//This runs when the /register URL is entered and displays the following page:
+  //Route to the login page.
+  case "/index.php/login":
+    require "View/login.php";
+    break;
 
-	require "View/register.php";
-
-    	break;
-
-    case "/index.php/login":
-
-	//This runs when the /login URL is entered and displays the following page:
-
-	require "View/login.php";
-
-    	break;
-
-    default:
-        header("HTTP/1.1 404 Not Found");
-        echo $uri;
-        echo "<html><body><h1>Page Not Found.</h1></body></html>";
+  //If any other URL path is entered, display 404 Page Not Found error.
+  default:
+    header("HTTP/1.1 404 Error Not Found");
+    echo "<html><body><h1>Page Not Found.</h1></body></html>";
 }

@@ -3,7 +3,7 @@
 * {
   box-sizing: border-box;
   font-family: verdana;
-} 
+}
 
 a {
   text-decoration: none;
@@ -25,5 +25,5 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
-/* Styles for smaller screens */
+/* Styles for smaller screens */ 
 }
